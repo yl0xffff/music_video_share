@@ -8,23 +8,48 @@ export default function Home() {
   const [code, setCode] = useState('');
   const [showLink, setShowLink] = useState(false);
   const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
 
-  const handleSearch = () => {
-    // 验证输入（不区分大小写）
-    const normalizedFirstName = firstName.trim().toLowerCase();
-    const normalizedLastName = lastName.trim().toLowerCase();
-    const normalizedCode = code.trim();
-
-    if (
-      normalizedFirstName === 'jeremy' &&
-      normalizedLastName === 'yang' &&
-      normalizedCode === '6248'
-    ) {
-      setShowLink(true);
-      setError('');
-    } else {
+  const handleSearch = async () => {
+    // 基本验证
+    if (!firstName.trim() || !code.trim()) {
+      setError('請輸入 First Name 和代碼');
       setShowLink(false);
-      setError('輸入的資訊不正確，請重新輸入。');
+      return;
+    }
+
+    setLoading(true);
+    setError('');
+    setShowLink(false);
+
+    try {
+      // 调用服务器端 API 进行验证
+      const response = await fetch('/api/verify', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          firstName: firstName.trim(),
+          lastName: lastName.trim(),
+          code: code.trim(),
+        }),
+      });
+
+      const data = await response.json();
+
+      if (data.valid) {
+        setShowLink(true);
+        setError('');
+      } else {
+        setShowLink(false);
+        setError(data.error || '輸入的資訊不正確，請重新輸入。');
+      }
+    } catch (err) {
+      setShowLink(false);
+      setError('網絡錯誤，請稍後再試。');
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -139,9 +164,10 @@ export default function Home() {
 
               <button
                 onClick={handleSearch}
-                className="w-full mt-6 px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                disabled={loading}
+                className="w-full mt-6 px-6 py-3 bg-indigo-600 hover:bg-indigo-700 disabled:bg-indigo-400 disabled:cursor-not-allowed text-white font-medium rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
               >
-                搜尋
+                {loading ? '驗證中...' : '搜尋'}
               </button>
 
               {error && (
