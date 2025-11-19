@@ -70,18 +70,23 @@ export default function Home() {
       <header className="w-full border-b border-slate-200/50 dark:border-slate-700/50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <nav className="flex items-center justify-between">
-            <div className="text-xl font-bold text-slate-900 dark:text-white">
-              音樂會視頻庫 / Concert Video Library
+            <div className="flex items-center gap-2">
+              <span className="text-xl font-bold text-slate-900 dark:text-white">
+                Concert Video Library
+              </span>
+              <span className="px-2 py-0.5 text-xs font-semibold rounded-full bg-indigo-100 text-indigo-800 dark:bg-indigo-900/30 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-700">
+                Beta v0.1.0
+              </span>
             </div>
             <div className="flex gap-4 text-sm text-slate-600 dark:text-slate-400">
               <a href="#" className="hover:text-slate-900 dark:hover:text-white transition-colors">
-                首頁 / Home
+                Home
               </a>
               <a href="#" className="hover:text-slate-900 dark:hover:text-white transition-colors">
-                視頻庫 / Video Library
+                Video Library
               </a>
               <a href="#" className="hover:text-slate-900 dark:hover:text-white transition-colors">
-                關於 / About
+                About
               </a>
             </div>
           </nav>
@@ -212,6 +217,9 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="text-center text-slate-600 dark:text-slate-400">
             <p>© 2025 呂老師學生音樂會視頻庫 / Ms. Lu's Student Concert Video Library. 保留所有權利 / All rights reserved.</p>
+            <p className="mt-2 text-xs text-slate-500 dark:text-slate-500">
+              Beta Version 0.1.0
+            </p>
           </div>
         </div>
       </footer>
