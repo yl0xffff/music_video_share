@@ -14,7 +14,7 @@ export default function Home() {
   const handleSearch = async () => {
     // 基本验证
     if (!firstName.trim() || !code.trim()) {
-      setError('請輸入 First Name 和代碼');
+      setError('請輸入 First Name 和代碼 / Please enter First Name and Code');
       setShowLink(false);
       return;
     }
@@ -47,12 +47,12 @@ export default function Home() {
       } else {
         setShowLink(false);
         setLink('');
-        setError(data.error || '輸入的資訊不正確，請重新輸入。');
+        setError(data.error || '輸入的資訊不正確，請重新輸入。 / The information entered is incorrect, please try again.');
       }
     } catch (err) {
       setShowLink(false);
       setLink('');
-      setError('網絡錯誤，請稍後再試。');
+      setError('網絡錯誤，請稍後再試。 / Network error, please try again later.');
     } finally {
       setLoading(false);
     }
@@ -71,17 +71,17 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <nav className="flex items-center justify-between">
             <div className="text-xl font-bold text-slate-900 dark:text-white">
-              音樂會視頻庫
+              音樂會視頻庫 / Concert Video Library
             </div>
             <div className="flex gap-4 text-sm text-slate-600 dark:text-slate-400">
               <a href="#" className="hover:text-slate-900 dark:hover:text-white transition-colors">
-                首頁
+                首頁 / Home
               </a>
               <a href="#" className="hover:text-slate-900 dark:hover:text-white transition-colors">
-                視頻庫
+                視頻庫 / Video Library
               </a>
               <a href="#" className="hover:text-slate-900 dark:hover:text-white transition-colors">
-                關於
+                關於 / About
               </a>
             </div>
           </nav>
@@ -93,10 +93,12 @@ export default function Home() {
         {/* Hero Section */}
         <div className="text-center mb-16">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 dark:text-white mb-6 tracking-tight">
-            呂老師學生音樂會視頻庫
+            呂老師學生音樂會視頻庫<br />
+            <span className="text-3xl sm:text-4xl lg:text-5xl">Ms. Lu's Student Concert Video Library</span>
           </h1>
           <p className="text-xl sm:text-2xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed">
-            記錄每一個精彩的音樂瞬間，珍藏學生們的成長足跡
+            記錄每一個精彩的音樂瞬間，珍藏學生們的成長足跡<br />
+            <span className="text-lg sm:text-xl">Recording every wonderful musical moment, treasuring students' growth journey</span>
           </p>
         </div>
 
@@ -104,7 +106,7 @@ export default function Home() {
         <div className="max-w-2xl mx-auto mb-16">
           <div className="bg-white/60 dark:bg-slate-800/60 backdrop-blur-sm rounded-2xl p-8 border border-slate-200/50 dark:border-slate-700/50">
             <h2 className="text-2xl font-semibold text-slate-900 dark:text-white mb-6 text-center">
-              搜尋視頻連結
+              搜尋視頻連結 / Search Video Link
             </h2>
             
             <div className="space-y-4">
@@ -124,7 +126,7 @@ export default function Home() {
                   }}
                   onKeyDown={handleKeyDown}
                   className="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-colors"
-                  placeholder="請輸入 First Name"
+                  placeholder="請輸入 First Name / Please enter First Name"
                 />
               </div>
 
@@ -144,13 +146,13 @@ export default function Home() {
                   }}
                   onKeyDown={handleKeyDown}
                   className="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-colors"
-                  placeholder="請輸入 Last Name"
+                  placeholder="請輸入 Last Name / Please enter Last Name"
                 />
               </div>
 
               <div>
                 <label htmlFor="code" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
-                  四位數字代碼
+                  四位數字代碼 / 4-Digit Code
                 </label>
                 <input
                   id="code"
@@ -165,7 +167,7 @@ export default function Home() {
                   }}
                   onKeyDown={handleKeyDown}
                   className="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-colors"
-                  placeholder="請輸入四位數字"
+                  placeholder="請輸入四位數字 / Please enter 4-digit code"
                   maxLength={4}
                 />
               </div>
@@ -175,7 +177,7 @@ export default function Home() {
                 disabled={loading}
                 className="w-full mt-6 px-6 py-3 bg-indigo-600 hover:bg-indigo-700 disabled:bg-indigo-400 disabled:cursor-not-allowed text-white font-medium rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
               >
-                {loading ? '驗證中...' : '搜尋'}
+                {loading ? '驗證中... / Verifying...' : '搜尋 / Search'}
               </button>
 
               {error && (
@@ -187,7 +189,8 @@ export default function Home() {
               {showLink && link && (
                 <div className="mt-6 p-6 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg">
                   <p className="text-green-800 dark:text-green-300 font-medium mb-3 text-center">
-                    找到您的視頻連結：
+                    找到您的視頻連結：<br />
+                    <span className="text-base">Your video link has been found:</span>
                   </p>
                   <a
                     href={link}
@@ -208,7 +211,7 @@ export default function Home() {
       <footer className="mt-16 border-t border-slate-200/50 dark:border-slate-700/50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="text-center text-slate-600 dark:text-slate-400">
-            <p>© 2024 呂老師學生音樂會視頻庫. 保留所有權利.</p>
+            <p>© 2025 呂老師學生音樂會視頻庫 / Ms. Lu's Student Concert Video Library. 保留所有權利 / All rights reserved.</p>
           </div>
         </div>
       </footer>

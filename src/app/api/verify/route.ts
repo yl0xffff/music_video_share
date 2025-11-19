@@ -42,7 +42,7 @@ export async function POST(request: NextRequest) {
     // 验证输入
     if (!firstName || !code) {
       return NextResponse.json(
-        { valid: false, error: '請提供 First Name 和代碼' },
+        { valid: false, error: '請提供 First Name 和代碼 / Please provide First Name and Code' },
         { status: 400 }
       );
     }
@@ -66,18 +66,18 @@ export async function POST(request: NextRequest) {
     if (matchedStudent) {
       return NextResponse.json({ 
         valid: true,
-        message: '驗證成功',
+        message: '驗證成功 / Verification successful',
         link: matchedStudent.link
       });
     } else {
       return NextResponse.json({ 
         valid: false,
-        error: '輸入的資訊不正確，請重新輸入。'
+        error: '輸入的資訊不正確，請重新輸入。 / The information entered is incorrect, please try again.'
       });
     }
   } catch (error) {
     return NextResponse.json(
-      { valid: false, error: '服務器錯誤，請稍後再試。' },
+      { valid: false, error: '服務器錯誤，請稍後再試。 / Server error, please try again later.' },
       { status: 500 }
     );
   }
