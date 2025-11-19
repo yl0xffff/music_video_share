@@ -7,6 +7,7 @@ export default function Home() {
   const [lastName, setLastName] = useState('');
   const [code, setCode] = useState('');
   const [showLink, setShowLink] = useState(false);
+  const [link, setLink] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
@@ -21,6 +22,7 @@ export default function Home() {
     setLoading(true);
     setError('');
     setShowLink(false);
+    setLink('');
 
     try {
       // 调用服务器端 API 进行验证
@@ -40,13 +42,16 @@ export default function Home() {
 
       if (data.valid) {
         setShowLink(true);
+        setLink(data.link || '');
         setError('');
       } else {
         setShowLink(false);
+        setLink('');
         setError(data.error || '輸入的資訊不正確，請重新輸入。');
       }
     } catch (err) {
       setShowLink(false);
+      setLink('');
       setError('網絡錯誤，請稍後再試。');
     } finally {
       setLoading(false);
@@ -114,6 +119,7 @@ export default function Home() {
                   onChange={(e) => {
                     setFirstName(e.target.value);
                     setShowLink(false);
+                    setLink('');
                     setError('');
                   }}
                   onKeyDown={handleKeyDown}
@@ -133,6 +139,7 @@ export default function Home() {
                   onChange={(e) => {
                     setLastName(e.target.value);
                     setShowLink(false);
+                    setLink('');
                     setError('');
                   }}
                   onKeyDown={handleKeyDown}
@@ -153,6 +160,7 @@ export default function Home() {
                     const value = e.target.value.replace(/\D/g, '').slice(0, 4);
                     setCode(value);
                     setShowLink(false);
+                    setLink('');
                     setError('');
                   }}
                   onKeyDown={handleKeyDown}
@@ -176,18 +184,18 @@ export default function Home() {
                 </div>
               )}
 
-              {showLink && (
+              {showLink && link && (
                 <div className="mt-6 p-6 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg">
                   <p className="text-green-800 dark:text-green-300 font-medium mb-3 text-center">
                     找到您的視頻連結：
                   </p>
                   <a
-                    href="https://drive.google.com/file/d/1fNfNqn7AMT0Y3C7tIMFqlvSjkH144SMz/view?usp=drive_link"
+                    href={link}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="block text-center px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded-lg transition-colors break-all"
                   >
-                    https://drive.google.com/file/d/1fNfNqn7AMT0Y3C7tIMFqlvSjkH144SMz/view?usp=drive_link
+                    {link}
                   </a>
                 </div>
               )}
