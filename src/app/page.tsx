@@ -120,7 +120,7 @@ export default function Home() {
                   }}
                   onKeyDown={handleKeyDown}
                   className="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-colors"
-                  placeholder="請輸入 First Name / Please enter First Name"
+                  placeholder="First Name"
                 />
               </div>
 
@@ -140,13 +140,13 @@ export default function Home() {
                   }}
                   onKeyDown={handleKeyDown}
                   className="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-colors"
-                  placeholder="請輸入 Last Name / Please enter Last Name"
+                  placeholder="Last Name"
                 />
               </div>
 
               <div>
                 <label htmlFor="code" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
-                  四位數字代碼 / 4-Digit Code
+                  4-Digit Code
                 </label>
                 <input
                   id="code"
@@ -161,7 +161,7 @@ export default function Home() {
                   }}
                   onKeyDown={handleKeyDown}
                   className="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-colors"
-                  placeholder="請輸入四位數字 / Please enter 4-digit code"
+                  placeholder="4-digit code"
                   maxLength={4}
                 />
               </div>
@@ -171,7 +171,7 @@ export default function Home() {
                 disabled={loading}
                 className="w-full mt-6 px-6 py-3 bg-indigo-600 hover:bg-indigo-700 disabled:bg-indigo-400 disabled:cursor-not-allowed text-white font-medium rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
               >
-                {loading ? '驗證中... / Verifying...' : '搜尋 / Search'}
+                {loading ? 'Verifying...' : 'Search'}
               </button>
 
               {error && (
