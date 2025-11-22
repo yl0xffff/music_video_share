@@ -70,39 +70,13 @@ export default function Home() {
       <header className="w-full border-b border-slate-200/50 dark:border-slate-700/50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <nav className="flex items-center justify-between">
-            {/* left placeholder to help center the title on small screens */}
-            <div className="w-1/3 flex items-center" />
-
-            {/* center title */}
-            <div className="w-1/3 flex justify-center">
-              <a
-                href="/"
-                className="text-xl font-bold text-slate-900 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors text-center"
-              >
-                Concert Video Library
+            <a href="/" className="text-xl font-bold text-slate-900 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+              Concert Video Library
+            </a>
+            <div className="flex gap-4 text-sm text-slate-600 dark:text-slate-400">
+              <a href="#" className="hover:text-slate-900 dark:hover:text-white transition-colors">
+                2025
               </a>
-            </div>
-
-            {/* year selector (mobile-friendly native select) */}
-            <div className="w-1/3 flex justify-end">
-              <div className="flex items-center">
-                <label htmlFor="yearSelect" className="sr-only">
-                  Year
-                </label>
-                <select
-                  id="yearSelect"
-                  defaultValue=""
-                  className="text-sm text-slate-600 dark:text-slate-400 bg-white/0 dark:bg-transparent px-3 py-2 rounded-md border border-transparent hover:border-slate-200 dark:hover:border-slate-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-colors"
-                >
-                  <option value="" disabled>
-                    Year
-                  </option>
-                  <option value="2025">2025</option>
-                  <option value="2024">2024</option>
-                  <option value="2023">2023</option>
-                  <option value="2022">2022</option>
-                </select>
-              </div>
             </div>
           </nav>
         </div>
