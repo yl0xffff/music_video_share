@@ -71,7 +71,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <nav className="flex items-center justify-between">
             <a href="/" className="text-xl font-bold text-slate-900 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
-              Concert Video Library
+              Mrs. Lv's Concert Video Library
             </a>
             <div className="flex gap-4 text-sm text-slate-600 dark:text-slate-400">
               <a href="#" className="hover:text-slate-900 dark:hover:text-white transition-colors">
@@ -87,8 +87,8 @@ export default function Home() {
         {/* Hero Section */}
         <div className="text-center mb-16">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 dark:text-white mb-6 tracking-tight">
-            呂老師學生音樂會視頻庫<br />
-            <span className="text-3xl sm:text-4xl lg:text-5xl">Mrs. Lv's Student Concert Video Library</span>
+            呂老師和學生的音樂會視頻庫<br />
+            <span className="text-3xl sm:text-4xl lg:text-5xl">Mrs. Lv and her Student Concert Video Library</span>
           </h1>
           <p className="text-xl sm:text-2xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed">
             記錄每一個精彩的音樂瞬間，珍藏學生們的成長足跡<br />
@@ -205,7 +205,7 @@ export default function Home() {
       <footer className="mt-16 border-t border-slate-200/50 dark:border-slate-700/50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="text-center text-slate-600 dark:text-slate-400">
-            <p>© 2025 呂老師學生音樂會視頻庫 / Mrs. Lv's Student Concert Video Library. 保留所有權利 / All rights reserved.</p>
+            <p>© 2025 呂老師音乐視頻庫 / Mrs. Lv's Concert Video Library. 保留所有權利 / All rights reserved.</p>
             <p className="mt-2 text-xs text-slate-500 dark:text-slate-500 flex items-center justify-center gap-2">
               Power by Webolution, LLC Beta Version 0.1.0
               <a
