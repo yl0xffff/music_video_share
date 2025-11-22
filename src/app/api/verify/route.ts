@@ -32,6 +32,7 @@ const students = [
   { firstName: 'summer', lastName: 'sun', code: '3905', link: 'https://drive.google.com/file/d/1hNsiWRcZMVPpZ7EXZ3wQqV7gbmx7pdbh/view?usp=drive_link' },
   { firstName: 'ellie', lastName: 'liu', code: '5139', link: 'https://drive.google.com/file/d/1VbtAXdDlMsYbxm6MGJteqrvUhE3_yzot/view?usp=drive_link' },
   { firstName: 'kathleen', lastName: 'xin', code: '7264', link: 'https://drive.google.com/file/d/1PNGnBee5FXEgBNdnVR3Rf_FOP-I4P_Jy/view?usp=drive_link' },
+  { firstName: 'guihua', lastName: 'lv', code: '1146', link: 'https://drive.google.com/drive/folders/1f66-DbSNARtRBBz3IwoJ1BdKARqMBb0e?usp=drive_link' },
 ];
 
 export async function POST(request: NextRequest) {
