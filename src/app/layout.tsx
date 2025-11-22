@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "呂老師學生音樂會視頻庫 / Ms. Lu's Student Concert Video Library",
+  title: "呂老師學生音樂會視頻庫 / Ms. Lv's Student Concert Video Library",
   description: "記錄每一個精彩的音樂瞬間，珍藏學生們的成長足跡 / Recording every wonderful musical moment, treasuring students' growth journey",
 };
 
