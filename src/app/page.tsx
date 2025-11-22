@@ -206,8 +206,17 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="text-center text-slate-600 dark:text-slate-400">
             <p>© 2025 呂老師學生音樂會視頻庫 / Mrs. Lv's Student Concert Video Library. 保留所有權利 / All rights reserved.</p>
-            <p className="mt-2 text-xs text-slate-500 dark:text-slate-500">
-              Beta Version 0.1.0
+            <p className="mt-2 text-xs text-slate-500 dark:text-slate-500 flex items-center justify-center gap-2">
+              Power by Webolution, LLC Beta Version 0.1.0
+              <a
+                href="mailto:richard.li@webolutionllc.com"
+                className="inline-flex items-center"
+                aria-label="Email Richard Li"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src="/images/email.png" alt="Email" className="w-4 h-4" />
+              </a>
             </p>
           </div>
         </div>
