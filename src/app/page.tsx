@@ -75,7 +75,7 @@ export default function Home() {
             </a>
             <div className="flex gap-4 text-sm text-slate-600 dark:text-slate-400">
               <a href="#" className="hover:text-slate-900 dark:hover:text-white transition-colors">
-                About
+                2025
               </a>
             </div>
           </nav>
